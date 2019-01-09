@@ -1,0 +1,126 @@
+.crystal-image {
+    width: 300px;
+    height: 300px;
+  }
+
+  .jumbotron {
+    color: purple;
+    height: 200px;
+    /* font-family: 'Major Mono Display', monospace;  */
+    font-family: 'Aclonica', sans-serif;
+  }
+  
+  body {
+   
+    background-image: url("../images/background-2730506_1920.jpg"); 
+  }
+
+  button {
+      margin-left: 380px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+  }
+
+
+ .container {
+    /* font-family: 'Major Mono Display', monospace; */
+    font-family: 'Aclonica', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    height: 5px;
+  }
+
+ 
+  .populate {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  #number-to-guess {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  #currentWord {
+    font-size: 25px;
+    font-weight: bold;
+    color: purple;
+  }
+
+  #cry1, #cry2, #cry3, #cry4 {
+      padding-top: 80px;
+      padding-bottom: 80px;
+  }
+
+  /* Media Queries */
+
+@media screen and (max-width: 640px) {
+    .container {
+      width: 100%; 
+      padding: 40px;
+    }
+  }
+
+  @media only screen and (max-width: 640px) {
+   .jumbotron {
+      width: 100%; 
+      padding: 40px;
+      padding-top: 40px;
+      font-size: 16px;
+    
+    }
+  }
+
+  @media screen and (max-width: 768x) {
+    .jumbotron {
+        width: 100%; 
+        padding: 40px;
+        padding-top: 40px;
+        font-size: 18px;
+    }
+  }
+
+@media screen and (max-width: 980px) {
+    .jumbotron {
+        width: 100%; 
+        padding: 40px;
+        padding-top: 40px;
+        
+    }
+  }
+
+  @media only screen and (max-width: 640px) {
+    button {
+    margin-left: 50px;
+     }
+   }
+ 
+   @media screen and (max-width: 768x) {
+     button {
+        margin-left: 300px;
+     }
+   }
+ 
+ @media screen and (max-width: 980px) {
+     button {
+        margin-left: 380px;
+     }
+   }
+
+          
+       /* Safari 4.0 - 8.0 */
+      @-webkit-keyframes example {
+        from {background-color: #95A9DF}
+        to {background-color: #704C90;}
+      }
+          
+          /* Standard syntax */
+     @keyframes example {
+        from {background-color: #95A9DF;}
+        to {background-color:#704C90;}
+     } 
+
+  

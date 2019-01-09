@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Crystal Number Game</title>
+
+  <meta charset="utf-8" />
+
+   <!-- Added link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Aclonica|Amatic+SC|Fredericka+the+Great|Major+Mono+Display|Poiret+One|Syncopate" rel="stylesheet">
+  <script src="assets/javascript/game.js"></script>
+
+</head>
+<body>
+
+    <div style="background-color:transparent !important" class="jumbotron">
+        <h1 class="text-center">Crystal Collector </h1>
+        <p class="text-center">Using the four crystals below, try to match the computer's random given number.
+        Each crystal is given a numeric value. Click on the crystals to add the values and match the random number.
+        Win the game by matching your total score to the random number. If you go over the random number, you lose.
+        <br/>
+        Good Luck!</p>
+    </div>
+
+    <div class="container pb-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="container mb-2 pb-4 mt-3">
+                    <p class="text-center">Target Score:</p>
+                <div class="text-center">
+            <span class="populate" id="number-to-guess"></span>
+        </div>
+    </div> 
+    </div> 
+    
+    <div class="col-md-6">
+    <div class="container pb-4 mt-3">
+        <h3 class="text-center">Your Score:</h3>
+            <div class="text-center">
+                <h1 class="populate" id="totalScore"></h1>
+            </div>
+        </div> 
+     </div>
+
+
+ <div class=row>
+	<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 text-center">
+        <img class="crystalimg img-responsive" id="cry1" src="assets/images/2-Star_Crystal.png" alt="Crystal 1"/>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 text-center">
+        <img class="crystalimg img-responsive" id="cry2" src="assets/images/crystal_cosmic.png" alt="Crystal 2"/>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 text-center">
+        <img class="crystalimg img-responsive" id="cry3" src="assets/images/Crystal_mutant.png" alt="Crystal 3"/>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 text-center">
+        <img class="crystalimg img-responsive" id="cry4" src="assets/images/Crystal_rare.png" alt="Crystal 4"/>
+    </div>
+</div>
+
+<div class="container pb-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="container mb-2 pb-4 mt-3">
+                    <h3 class="text-center">Wins:</h3>
+                <div class="text-center">
+            <h1 class="populate" id="wins"></h1>
+        </div>
+    </div> 
+    </div> 
+    
+    <div class="col-md-6">
+    <div class="container pb-4 mt-3">
+        <h3 class="text-center">Losses:</h3>
+            <div class="text-center">
+                <h1 class="populate" id="losses"></h1>
+            </div>
+        </div> 
+     </div>
+
+<div class="col-lg-4 button">
+    <h3 id="outcome"></h3>
+    <button type="button" class="btn btn-light btn-lg">PLAY AGAIN</button>
+</div>
+
+
+  <!-- Note that this div is now empty. We will fill it dynamically -->
+  <div id="crystals">
+  </div>
+
+  <!-- JAVASCRIPT  -->
+  <!-- ========================================= -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script type="text/javascript">
+
+
+// x = 19, y = 120
+// var targetNumber = Math.floor(Math.random()* ((120-19)+1)+19);
+
+// $("#number-to-guess").text(targetNumber);
+
+$(document).ready(function() {
+var computerGuess;
+var totalScore = 0;
+var wins = 0;
+var losses = 0;
+var cry1;
+var cry2;
+var cry3;
+var cry4;
+
+
+// Create a randomly generated number between 19 and 120
+
+// x = 19, y = 120
+// var targetNumber = Math.floor(Math.random()* ((120-19)+1)+19);
+// console.log(targetNumber);
+
+// $("#number-to-guess").text(targetNumber);
+
+    
+//     function newNumbers() {
+// 		targetNumber = Math.floor(Math.random() * 12) + 1;
+//         cry1 = Math.ceil(Math.random() * 12); 
+//         console.log(cry1);
+//         cry2= Math.ceil(Math.random() * 12);
+//         console.log(cry2);
+//         cry3 = Math.ceil(Math.random() * 12);
+//         console.log(cry3);
+//         cry4 = Math.ceil(Math.random() * 12);
+//         console.log(cry4);
+// 	}
+
+// 	function newGame() {
+// 		newNumbers();
+// 		totalScore = 0;
+// 		$("#number-to-guess").text(targetNumber);
+// 		$("#totalScore").text(totalScore);
+// 		$("#cry1").attr("data-crystalvalue", cry1);
+// 		$("#cry2").attr("data-crystalvalue", cry2);
+// 		$("#cry3").attr("data-crystalvalue", cry3);
+// 		$("#cry4").attr("data-crystalvalue", cry4);
+// 		$("#wins").text(wins);
+// 		$("#losses").text(losses);
+// 		$("#outcome").text("");
+
+// 		console.log(cry1, cry2, cry3, cry4);
+// 	}
+
+// 	function winner() {
+// 		$("#outcome").text("YOU WIN!");
+// 		wins++;
+// 		$("#wins").text(wins);
+// 	}
+
+// 	function looser() {
+// 		$("#outcome").text("YOU LOSE");
+// 		losses++;
+// 		$("#losses").text(losses);
+// 	}
+
+// 	newGame();
+
+// 	$(".crystalimg").hover(function() {
+// 		$(this).css({opacity: 0.60});
+// 	},
+// 	function() {
+// 		$(this).css({opacity: 1});
+// 	});
+
+// 	// Function to add the crystal values together
+// 	$(".crystalimg").on("click", function() {
+// 		if (totalScore >= targetNumber) {
+// 			return;
+// 		}
+
+// 		var crystalValue = $(this).attr("data-crystalvalue");
+// 		crystalValue = parseInt(crystalValue);
+// 		totalScore += crystalValue;
+// 		$("#totalScore").text(totalScore);
+
+// 		if (totalScore === targetNumber) {
+// 			winner();
+// 		} else if (totalScore > targetNumber) {
+// 			looser();
+// 		}
+// 	});
+
+// 	$(".btn").on("click", function() {
+// 		newGame();
+// 	});
+
+}); 
+
+</script>
+
+</body>
+</html>
+
+
