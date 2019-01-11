@@ -10,7 +10,7 @@ $(document).ready(function() {
     var cry4;
     
     
-    // Create a randomly generated number between 19 and 120
+    
     
     // x = 19, y = 120
     // var targetNumber = Math.floor(Math.random()* ((120-19)+1)+19);
@@ -18,7 +18,7 @@ $(document).ready(function() {
     
     // $("#number-to-guess").text(targetNumber);
     
-        
+     // Create a randomly generated number between 19 and 120 for computer and between 1 & 12 for crystals   
         function newNumbers() {
             targetNumber = Math.floor(Math.random() * ((120-19)+1)+19);
             console.log("target number again " + targetNumber);
